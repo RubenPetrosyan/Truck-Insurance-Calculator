@@ -14,12 +14,12 @@
                 <label class="required">Original Effective Date: <input type="date" id="effectiveDate" required></label>
                 <label class="required">Original Expiration Date: <input type="date" id="expirationDate" required readonly></label>
                 <label class="required">Endorsement Date: <input type="date" id="endorsementDate" required></label>
-                <label class="required">Remaining No. of Payments: <input type="number" id="remainingPayments" min="1" max="10" required></label>
-                <label class="required">Original No. of Payments: <input type="number" id="originalPayments" min="1" max="10" required></label>
+                <label class="required">Remaining No. of Payments: <input type="number" id="remainingPayments" class="small-field" min="1" max="10" required></label>
+                <label class="required">Original No. of Payments: <input type="number" id="originalPayments" class="small-field" min="1" max="10" required></label>
                 <label class="required">Original Premium: <input type="number" id="originalPremium" step="0.01" required></label>
-                <label class="required">Original DownPayment (%): <input type="number" id="originalDownPayment" step="0.01" min="0" max="100" required></label>
-                <label class="required">Additional DownPayment (%): <input type="number" id="additionalDownPayment" step="0.01" min="0" max="100" required></label>
-                <label class="required">APR (%): <input type="number" id="apr" step="0.01" required></label>
+                <label class="required">Original DownPayment (%): <input type="number" id="originalDownPayment" class="small-field" step="0.01" min="0" max="100" required></label>
+                <label class="required">Additional DownPayment (%): <input type="number" id="additionalDownPayment" class="small-field" step="0.01" min="0" max="100" required></label>
+                <label class="required">APR (%): <input type="number" id="apr" class="small-field" step="0.01" required></label>
                 <label>Client: <input type="text" id="client"></label>
             </div>
             <button type="button">Calculate</button>
@@ -32,4 +32,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
