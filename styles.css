@@ -23,13 +23,21 @@ h1, h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
+    align-items: center;
 }
 
+/* Make small fields compact */
+.small-field {
+    width: 80px;
+}
+
+/* Ensure labels are inline with input fields */
 label {
     font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+    white-space: nowrap;
 }
 
 label.required::after {
@@ -38,6 +46,7 @@ label.required::after {
     font-weight: bold;
 }
 
+/* Make input fields uniform but keep some smaller */
 input {
     width: 100%;
     padding: 8px;
@@ -72,5 +81,9 @@ button:hover {
 @media (max-width: 768px) {
     .form-grid {
         grid-template-columns: 1fr; /* Stack fields on smaller screens */
+    }
+
+    .small-field {
+        width: 100%;
     }
 }
