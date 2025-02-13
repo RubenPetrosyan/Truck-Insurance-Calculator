@@ -10,16 +10,17 @@
     <div class="container">
         <h1>Truck Insurance Calculator</h1>
         <form id="insuranceForm">
-            <label>Original Effective Date: <input type="date" id="effectiveDate" required></label>
-            <label>Original Expiration Date: <input type="date" id="expirationDate" required></label>
-            <label>Endorsement Date: <input type="date" id="endorsementDate" required></label>
-            <label>Remaining No. of Payments: <input type="number" id="remainingPayments" min="1" max="10" required></label>
-            <label>Original No. of Payments: <input type="number" id="originalPayments" min="1" max="10" required></label>
-            <label>Original Premium: <input type="number" id="originalPremium" step="0.01" required></label>
-            <label>Original DownPayment (%): <input type="number" id="originalDownPayment" step="0.01" required></label>
-            <label>Additional DownPayment (%): <input type="number" id="additionalDownPayment" step="0.01" required></label>
+            <label class="required">Original Effective Date: <input type="date" id="effectiveDate" required></label>
+            <label class="required">Original Expiration Date: <input type="date" id="expirationDate" required readonly></label>
+            <label class="required">Endorsement Date: <input type="date" id="endorsementDate" required></label>
+            <label class="required">Remaining No. of Payments: <input type="number" id="remainingPayments" min="1" max="10" required></label>
+            <label class="required">Original No. of Payments: <input type="number" id="originalPayments" min="1" max="10" required></label>
+            <label class="required">Original Premium: <input type="number" id="originalPremium" step="0.01" required></label>
+            <label class="required">Original DownPayment (%): <input type="number" id="originalDownPayment" step="0.01" min="0" max="100" required></label>
+            <label class="required">Additional DownPayment (%): <input type="number" id="additionalDownPayment" step="0.01" min="0" max="100" required></label>
             <label>Client: <input type="text" id="client"></label>
-            <button type="button" onclick="calculateInsurance()">Calculate</button>
+            <label class="required">APR (%): <input type="number" id="apr" step="0.01" required></label>
+            <button type="button">Calculate</button>
         </form>
 
         <h2>Results</h2>
