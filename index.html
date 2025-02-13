@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Insurance Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Truck Insurance Calculator</h1>
+        <form id="insuranceForm">
+            <label>Original Effective Date: <input type="date" id="effectiveDate" required></label>
+            <label>Original Expiration Date: <input type="date" id="expirationDate" required></label>
+            <label>Endorsement Date: <input type="date" id="endorsementDate" required></label>
+            <label>Remaining No. of Payments: <input type="number" id="remainingPayments" min="1" max="10" required></label>
+            <label>Original No. of Payments: <input type="number" id="originalPayments" min="1" max="10" required></label>
+            <label>Original Premium: <input type="number" id="originalPremium" step="0.01" required></label>
+            <label>Original DownPayment (%): <input type="number" id="originalDownPayment" step="0.01" required></label>
+            <label>Additional DownPayment (%): <input type="number" id="additionalDownPayment" step="0.01" required></label>
+            <label>Client: <input type="text" id="client"></label>
+            <button type="button" onclick="calculateInsurance()">Calculate</button>
+        </form>
+
+        <h2>Results</h2>
+        <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
