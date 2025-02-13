@@ -19,10 +19,10 @@ h1, h2 {
     color: #333;
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 label.required::after {
@@ -30,7 +30,7 @@ label.required::after {
     color: red;
 }
 
-input {
+input, button {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -39,28 +39,11 @@ input {
 }
 
 button {
-    width: 100%;
     background: #28a745;
     color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
 }
 
 button:hover {
     background: #218838;
-}
-
-#results {
-    background: #f8f9fa;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-p {
-    font-size: 16px;
-    margin: 5px 0;
 }
