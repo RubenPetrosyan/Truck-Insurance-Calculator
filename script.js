@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("button").addEventListener("click", calculateInsurance);
+});
+
 function calculateInsurance() {
     const effectiveDate = new Date(document.getElementById('effectiveDate').value);
     const expirationDate = new Date(document.getElementById('expirationDate').value);
@@ -9,6 +13,24 @@ function calculateInsurance() {
     const additionalDownPaymentPct = parseFloat(document.getElementById('additionalDownPayment').value) / 100;
     const apr = parseFloat(document.getElementById('apr').value) / 100;
     const client = document.getElementById('client').value;
+
+    // Validation checks
+    if (!effectiveDate || !expirationDate || !endorsementDate || isNaN(originalPremium) || isNaN(originalDownPaymentPct) || isNaN(additionalDownPaymentPct) || isNaN(apr) || isNaN(remainingPayments) || isNaN(originalPayments)) {
+        alert("Please fill in all required fields correctly.");
+        return;
+    }
+    if (remainingPayments < 1 || remainingPayments > 10) {
+        alert("Remaining Payments must be between 1 and 10.");
+        return;
+    }
+    if (originalPayments < 1 || originalPayments > 10) {
+        alert("Original Payments must be between 1 and 10.");
+        return;
+    }
+    if (endorsementDate < effectiveDate || expirationDate < effectiveDate) {
+        alert("Invalid date selection. Ensure dates follow the correct sequence.");
+        return;
+    }
 
     const daysInYear = (effectiveDate.getFullYear() % 4 === 0) ? 366 : 365;
     const policyPeriodDays = Math.ceil((expirationDate - effectiveDate) / (1000 * 60 * 60 * 24));
